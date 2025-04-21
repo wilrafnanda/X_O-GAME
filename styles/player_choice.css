@@ -1,0 +1,193 @@
+.player_choice{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color:#f8f8f8;
+}
+.choice_btn{
+   display: flex;
+   align-items: center;
+   gap: 100px;
+   margin-top: 60px;
+   margin-bottom: 30px;
+}
+
+.choice_image{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    gap: 30px;
+
+    img{
+        width: 90px;
+    }
+    .btn-2{
+        margin-bottom: 6px;
+    }
+}
+.x_check,o_check{
+    display: flex;
+}
+.player_choice h3{
+    font-size: 1.5rem;
+    color: #e88347;
+}
+
+.x_check .custom_x_btn{
+    position: relative;
+
+  
+     padding: 15px 15px;
+    border-radius: 50%; 
+    border: 5px solid #5c9eed; 
+
+   
+}
+.o_check .custom_o_btn{
+    position: relative;
+   
+    padding: 5px 15px;
+    border-radius: 50%;
+    border: 5px solid #e88347;
+    
+   
+}
+
+.custom_o_btn::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 5px;
+    right: 5px;
+    background-color: #e88347;
+    
+}
+
+
+.custom_x_btn::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    right: 5px;
+    top: 5px;
+    background-color: #5c9eed;
+   
+}
+.Continue{
+    display: none;
+    margin-top: 100px;
+    cursor: pointer;
+    background: linear-gradient(to left,#e88347,#5c9eed);
+    padding: 12px 35px;
+    border: none;
+    color: #f8f8f8;
+    letter-spacing: 3px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    transition: 1s ease all ;
+
+    /* transition: 300ms ease all; */
+}
+.Continue:hover{
+    background: linear-gradient(90deg,#e88347,#5c9eed);
+    
+    box-shadow: 0px 0px 25px #e88347 ;
+    color:#f8f8f8;
+
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+input[type="checkbox"] {
+    display: none;
+}
+input[type="checkbox"]:checked ~ .custom_x_btn {
+    border: 5px solid #5c9eed;
+}
+input[type="checkbox"]:not(:checked) ~ .custom_x_btn::after {
+    background-color: transparent;
+   
+}
+
+input[type="checkbox"]:checked ~ .custom_o_btn {
+    border: 5px solid #e88347;
+}
+input[type="checkbox"]:not(:checked) ~ .custom_o_btn::after {
+    background-color: transparent;
+   
+}
+
+
+
+.choice_image img.img1 {
+    animation: bounce1 1.3s infinite ease-in-out; /* Faster bounce */
+}
+.choice_image img.img1:hover {
+    animation: bounce3 1.3s infinite ease-in-out; /* Faster bounce */
+}
+
+.choice_image img.img2 {
+    animation: bounce2 1.2s infinite ease-in-out; /* Slower bounce */
+}
+.choice_image img.img2:hover {
+    animation: bounce3 1.4s infinite ease-in-out; /* Slower bounce */
+}
+
+/* Keyframes for bouncing */
+@keyframes bounce1 {
+    0%, 100% {
+        transform: translateY(0); /* Initial position */
+    }
+    50% {
+        transform: translateY(-30px); /* Bounce up */
+    }
+}
+
+@keyframes bounce2 {
+    0%, 100% {
+        transform: translateY(0); /* Initial position */
+    }
+    
+    50% {
+        transform: translateY(-30px); /* Higher bounce */
+    }
+}
+@keyframes bounce3 {
+    0%, 100% {
+        transform: translateY(0); /* Initial position */
+    }
+    25%{
+        transform: rotate(20deg);
+    }
+    50%{
+        transform: rotate(-20deg);
+    }
+    75% {
+        transform: translateY(-50px); /* Higher bounce */
+    }
+}
+
+
+@media screen and (min-width:500px) {
+     .choice_image img{
+        width: 125px;
+    }
+    .choice_image,.choice_btn{
+        gap: 100px;
+    }
+    .Continue{
+        margin-top: 80px;
+        padding: 20px 45px;
+    }
+    .player_choice h3{
+        font-size: 2rem;
+    }
+    
+}

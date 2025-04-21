@@ -1,0 +1,211 @@
+.main_game_content{
+    display:none;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.score_board{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+}
+.score_box{
+    box-shadow: 0 0  10px rgba(0,0,0,0.3);
+    padding: 10px 40px;
+    font-size: 1.5rem;
+    border-radius: 30px;
+    letter-spacing: 3px;
+}
+.game_board{
+    width: 85%;
+    min-width: 300px;
+    padding:20px 10px;
+    box-shadow: 0 0  10px rgba(0,0,0,0.3);
+    border-radius: 20px;
+    margin-top: 25px;
+    background:#f8f8f8 ;
+
+}
+.cell{
+    border: 1px solid rgba(128, 128, 128, 0.418);
+    cursor: pointer;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+}
+.cell_board{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+   
+}
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top: none;
+}
+.cell:nth-child(3n + 1){
+    border-left: none;
+}
+.cell:nth-child(3n){
+    border-right: none;
+}
+
+.cell:nth-child(3n + 3){
+    border-right: none;
+}
+.cell:last-child,
+.cell:nth-child(7),
+.cell:nth-child(8){
+    border-bottom: none;
+}
+
+.setting_btn{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0  10px rgba(0,0,0,0.3);
+
+    img{
+        filter: invert(1);
+    }
+}
+
+.cell.x::after{
+    content: url(../asset/imges/single\ x.png);
+    position: absolute;
+    animation: bounce3 2.4s infinite ease-in-out; /* Slower bounce */
+    
+}
+.cell.o::after{
+    content: url(../asset/imges/single\ O.png);
+    position: absolute;
+    animation: bounce4 2.4s infinite ease-in-out; /* Slower bounce */
+
+}
+
+.setting_box_black{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background:rgb(157, 151, 145,0.5); 
+    display:none;
+    justify-content: center;
+    align-items: center;transition: 350ms ease all;
+}
+.options{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.setting{
+    background: #f8f8f8;
+    padding: 30px 65px;
+    border-radius: 25px;
+    img{
+        box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        padding: 2px;
+        border-radius: 50%;
+    }
+}
+.close_btn{
+    background: tomato;
+    padding: 2px;
+    border-radius: 50%;
+}
+.o_player.playing{
+    /* background-color: #ffee04; */
+    box-shadow: 0 0 15px rgba(255, 154, 11, 0.548);
+
+    border-radius: 10px;
+    padding: 8px;
+    animation: pulse 2s infinite; /* Optional animation */
+}
+
+.x_player.playing{
+    /* background-color: #ffee04; */
+    box-shadow: 0 0 15px rgba(6, 89, 255, 0.3);
+    border-radius: 10px;
+    padding: 8px;
+    animation: pulse 2s infinite; /* Optional animation */
+}
+@keyframes bounce3 {
+    0%, 100% {
+        transform: translateY(0); /* Initial position */
+    }
+    25%{
+        transform: rotate(20deg);
+    }
+    50%{
+        transform: rotate(-20deg);
+    }
+    75% {
+        /* transform: translateY(-50px); Higher bounce */
+    }
+}
+@keyframes bounce4 {
+    0%, 100% {
+        transform: translateY(0); /* Initial position */
+    }
+    25%{
+        transform: rotate(20deg);
+    }
+    50%{
+        transform: rotate(-20deg);
+    }
+    75% {
+        transform: translateY(-5px);
+    }
+}
+
+.game_message{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Highlight winning cells */
+.highlight {
+    background-color: #9D9791; /* Example color for highlighting */
+    border: 20px;
+    animation: pulse 2s infinite; /* Optional animation */
+}
+
+/* Optional pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(.8);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .main_game_content .game_board {
+        width: 80%; /* Set the game board width to 40% */
+        max-width: 400px;
+    }
+}

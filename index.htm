@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="50x50" href="../asset/imges/naain page.png">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/main-page.css">
+    <link rel="stylesheet" href="../styles/player_choice.css">
+    <link rel="stylesheet" href="../styles/main-board.css">
+    <script src="..//js/index.js" defer></script>
+    <title>TIC-TAC-TOE</title>
+</head>
+<body>
+
+    <main class="main_container" id="render_container">
+<!--first page layout-->
+        <section class="main_page" id="main_page">
+            <img src="../asset/imges/naain page.png" alt="TIC-TAC-TOE">
+            <p>Choose Your Play Mode</p>
+            <div class="btn_container">
+                <span class="error_text" id="error_text">Not Avoilable yet</span>
+                
+                    <button class="AI_btn" id="AI_btn"> With AI</button>
+                    <button class="friend_btn" id="friend_btn">A friend</button>
+                
+            </div>
+        </section>
+<!--end of first page layout-->
+
+        <section class="player_choice" id="player_choice">
+            <h3>choose your Symbol</h3>
+            <div class="choice_image">
+                <img src="../asset/imges/x cchoice.png" class="img1" alt="">
+                <img src="../asset/imges/o choice.png" class="btn-2 img2">
+            </div>
+            <div class="choice_btn">
+              <div class="x_check">
+                <input type="checkbox" id="x_check" class="x_check checked" value="player1">
+                <label for="x_check" class="custom_x_btn">
+                    <!-- <div width="100px" height=""100px></div> -->
+                </label>
+              </div>
+              <div class="o_check">
+                <input type="checkbox" id="o_check" class="o_check checked" value="player2">
+                <label for="o_check" class="custom_o_btn"></label>
+              </div>
+               
+            </div>
+            <button class="Continue" id="continue_btn">Continue</button>
+        </section>
+<!--end of player choice page-->       
+
+<!--Beggining of main game-content-->
+
+        <section class="main_game_content" id="main_game_content">
+            <div class="score_board">
+                <img src="../asset/imges/single x.png" id="x_player" class="x_player">
+                <div class="player_score">
+                    <div class="score_box">
+                        <span class="player_1_score">0</span>
+                        -
+                        <span class="player_2_score">0</span>
+                    </div>
+                </div>
+                <img src="../asset/imges/single O.png"  id="o_player" class="o_player" alt="">
+            </div>
+
+            <div class="game_board">
+                <div class="cell_board">
+                    <div cellIndex="1" class="cell"></div>
+                    <div cellIndex="2" class="cell"></div>
+                    <div cellIndex="3" class="cell"></div>
+                    <div cellIndex="4" class="cell"></div>
+                    <div cellIndex="5" class="cell"></div>
+                    <div cellIndex="6" class="cell"></div>
+                    <div cellIndex="7" class="cell"></div>
+                    <div cellIndex="8" class="cell"></div>
+                    <div cellIndex="9" class="cell"></div>
+                </div>
+            </div>
+
+            <div class="setting_btn" id="setting_btn">
+                <img src="../asset/imges/settings_24dp_E8EAED_FILL1_wght400_GRAD0_opsz24.svg" alt="">
+            </div>
+
+            <div class="setting_box_black" id="setting_box_black">
+                <div class="setting">
+                    <div class="options">
+                        <img src="../asset/imges/close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+                         alt="" class="close_btn" id="stop_btn">
+                         <p>STOP GAME</p>
+                    </div>
+                    <div class="options">
+                        <img src="../asset/imges/refresh_24dp_E8EAED_FILL1_wght400_GRAD0_opsz24.svg"
+                         alt="" id="restart_btn">
+                         <p>RESET GAME</p>
+                    </div>
+                    <div class="options">
+                        <img src="../asset/imges/close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+                         alt="" id="close_btn">
+                         <p>CLOSE</p>
+                    </div>
+                </div>
+            </div>
+            <div class="game_message">
+                <p class="custom_message">
+                    PLAYER X WON
+                </p>
+            </div>
+        </section>
+    </main>
+    <!-- <script src="..//js/index.js"></script> -->
+</body>
+</html>

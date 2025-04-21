@@ -1,0 +1,134 @@
+.main_page{
+    /* display: none; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+
+    img{
+        width: 200px;
+        margin-bottom: 50px;
+        animation: bounce 1000ms infinite ease-in-out; /* Updated animation */
+        /* box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); */
+        /* padding: 30px; */
+        /* border-radius: 50px; */
+    }
+    img:hover,img:active{
+        transform: 500ms ease all;
+        animation: bounceRotate 4s infinite ease-in-out; /* Add animation */
+
+    }
+
+    p{
+        color: #173962;
+        letter-spacing: 1px;
+        margin-bottom: 35px;
+        font-size: 1.4rem;
+    }
+   
+
+}
+.main_page.active{
+    display: none;
+}
+.btn_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+
+    .AI_btn{
+        cursor: pointer;
+        background: #5c9eed;
+        padding: 12px 35px;
+        border: none;
+        color: #f8f8f8;
+        letter-spacing: 5px;
+        border-radius: 30px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+        transition: 300ms ease all;
+    }
+    .AI_btn:hover{
+        background: #2d68b0;
+        transition: 0.3s;
+        transform: scale(1.1);
+    }
+
+    .friend_btn{
+        cursor: pointer;
+        background: #f8f8f8;
+        padding: 12px 35px;
+        border: none;
+        color: #9d9791;
+        letter-spacing: 3px;
+        border-radius: 30px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+        transition: 300ms ease all;
+
+    }
+    .btn_container .flex{
+        display: flex;
+    }
+    .friend_btn:hover{
+        background: #e8e8e8;
+        transition: 0.3s;
+        transform: scale(1.1);
+    }
+}
+ #error_text{
+    color: rgb(255, 67, 67);
+    letter-spacing: 2px;
+    display: none;
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* Initial position */
+    }
+    50% {
+        transform: translateY(-20px); /* Bounce up */
+    }
+}
+
+@keyframes bounceRotate {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg); /* Initial position */
+    }
+    50% {
+        transform: translateY(-20px) rotate(360deg); /* Bounce up and rotate */
+    }
+}
+
+@media screen and (min-width:500px) {
+    .main_page img{
+        width: 300px;
+    }
+    .main_page p{
+        font-size: 2rem;
+    }
+    .main_page .btn_container button{
+        padding: 15px 40px;
+        font-size: 1.5rem;
+    }
+    
+} 
+@media screen and (min-width:750px) {
+    .btn_container {
+        flex-direction: row;
+        align-items: center;
+        gap: 50px;
+        margin-top: 50px;
+
+       
+    }
+
+    .main_page p{
+        width: 400px;
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+    }
+
+}
