@@ -133,14 +133,14 @@ restartBtn.addEventListener('click', () => {
 //handelling AI btn event
 const AI_btn = document.querySelector('#AI_btn');
 const error = document.querySelector('#error_text');
-
-AI_btn.addEventListener('click', () => {
-        error.style.display = 'inline-block';
-        error.innerHTML = 'AI is not available yet!';
-        setTimeout(() => {
-                error.style.display = 'none';
-        }, 3000)
+AI_btn.addEventListener('click', ()=>{
+    error.style.display ='inline-block'
+    error.innerHTML ='AI is not avoilable yet!'
+    setTimeout(()=>{
+        error.style.display = 'none';
+    }, 3000)
 })
+
 //main game handelling
 
 
