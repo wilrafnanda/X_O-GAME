@@ -123,7 +123,6 @@ restartBtn.addEventListener('click', () => {
         settingContainer.style.display = 'none';
         score1 = 0;
         score2 = 0;
-        currentclass = currentclass;
         player_1_score.innerText = score1;
         player_2_score.innerText = score2;
         cells.forEach(cell => {
@@ -131,9 +130,20 @@ restartBtn.addEventListener('click', () => {
             });
 })
 
+//handelling AI btn event
+const AI_btn = document.querySelector('#AI_btn');
+const error = document.querySelector('#error_text');
 
-
+AI_btn.addEventListener('click', () => {
+        error.style.display = 'inline-block';
+        error.innerHTML = 'AI is not available yet!';
+        setTimeout(() => {
+                error.style.display = 'none';
+        }, 3000)
+})
 //main game handelling
+
+
 const players = document.querySelectorAll('.checked');
 players.forEach(player => {
     player.addEventListener('click', (event) => {
@@ -152,42 +162,8 @@ players.forEach(player => {
     });
 
 });
-//handelling AI btn event
-const AI_btn = document.querySelector('#AI_btn');
-const error = document.querySelector('#error_text');
-
-const x_class = 'x';
-const o_class = 'o';
-
-function aiMove() {
-    const availableCells = [...cells].filter(cell => {
-        return !cell.classList.contains(x_class) && !cell.classList.contains(o_class);
-    });
-  
-    if (availableCells.length > 0) {
-        const randomCell = availableCells[Math.floor(Math.random() * availableCells.length)];
-        placeMark(randomCell, o_class); // Assuming AI plays as 'O'
-        if (checkWin(o_class)) {
-            winningMessage(o_class);
-        } else if (isDraw()) {
-            messageContainer.style.display = 'flex';
-            winningMeasage.innerText = 'DRAW';
-            setTimeout(() => {
-                messageContainer.style.display = 'none';
-                resetGame();
-            }, 3000);
-        } else {
-            swapTurn();
-        }
-    }
-}
-
-
-
 
 // Function to ensure only one checkbox is checked at a time
-
-
 function removeCheck(event) {
         players.forEach(player => {
             if (player !== event.target) {
@@ -198,6 +174,8 @@ function removeCheck(event) {
 
 //handelling the main game functions
 
+const x_class = 'x';
+const o_class = 'o';
 
 cells.forEach(cell =>{
         cell.addEventListener('click', handleClick, {once:true})
@@ -297,8 +275,6 @@ function winningMessage(winnerClass) {
         }, 3000);
 }
 
-    /*--------------------------------------------------- */
-
     function resetGame() {
         // Clear all marks from the board
         cells.forEach(cell => {
@@ -315,24 +291,4 @@ function winningMessage(winnerClass) {
     
         console.log('Game has been reset');
     }
-    /*--------------------------------------------------- */
-
-
-    /*--------------------------------------------------- */
-
-    //handelling winning condition for second level 
-    //winning condition of a [4 x 5] matrix box
-
-    const WINING_CONDITIONS_2 =[
-        [0, 1, 2],[1, 2, 3],[4, 5, 6],[5, 6, 7],
-        [8, 9, 10],[9, 10, 11],[12, 13, 14],[13, 14, 15],
-        [16, 17, 18],[17, 18, 19],[0, 4, 8],[16, 12, 8],
-        [4, 8, 2],[1, 5, 9],[9, 13, 17],[5, 9, 13],
-        [2, 6, 10],[10, 14, 18],[6, 10, 14],[3, 7, 11],
-        [11, 15, 19],[7, 11, 15],[2, 5, 8],[9, 6, 3],
-        [2, 9, 6],[7, 10, 13],[16, 13, 10],[11, 14, 17],
-        [1, 6, 11],[0, 5, 10],[0, 5, 10],[5, 10, 15]
-        [4, 9, 14],[9, 14, 19],[8, 13, 18]
-    ];
-    /*--------------------------------------------------- */
     
