@@ -22,7 +22,7 @@
 }
 .game_board{
     width: 85%;
-    min-width: 300px;
+    /* min-width: 300px; */
     padding:20px 10px;
     box-shadow: 0 0  10px rgba(0,0,0,0.3);
     border-radius: 20px;

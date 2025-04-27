@@ -44,7 +44,8 @@
     .AI_btn{
         cursor: pointer;
         background: #5c9eed;
-        padding: 12px 35px;
+        font-size: 1rem;
+        padding: 20px 45px;
         border: none;
         color: #f8f8f8;
         letter-spacing: 5px;
@@ -59,9 +60,10 @@
     }
 
     .friend_btn{
+        font-size: 1rem;
         cursor: pointer;
         background: #f8f8f8;
-        padding: 12px 35px;
+        padding: 20px 45px;
         border: none;
         color: #9d9791;
         letter-spacing: 3px;
